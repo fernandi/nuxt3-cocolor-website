@@ -241,7 +241,11 @@ export default {
       //console.log( this.scrollTop, window.innerHeight, window.scrollY > window.innerHeight * 0.7)
 
       // headerVisible est calculé en fonction de la valeur scrollTop
+      if(window){
       return this.scrollTop > window.innerHeight * 0.8;
+    }else{
+      return this.scrollTop > 700
+    }
     },
   },
   watch: {
