@@ -64,7 +64,7 @@ useHead({
 
       <div class="header-content">       
         <div class="header-right">
-          <img src="/static/logo-pink.svg" alt="Cocolor logo" class="text-logo" />
+          <img src="/logo-pink.svg" alt="Cocolor logo" class="text-logo" />
         </div>
         
         <div class="cta-buttons">
@@ -94,8 +94,8 @@ useHead({
         <button @click="switchLanguage" class="language-button">FR — EN</button>
     <header class="hero-section">
       <div class="hero-content">
-        <img src="/static/Tete.svg" alt="Cocolor logo" class="logo" />
-        <img src="/static/logo.svg" alt="Cocolor logo" class="text-logo" />
+        <img src="/Tete.svg" alt="Cocolor logo" class="logo" />
+        <img src="/logo.svg" alt="Cocolor logo" class="text-logo" />
         <p class="hero-title">{{ $t('play_with_colors') }}</p>
         <br><br>
                 <div class="cta-buttons">
@@ -121,7 +121,7 @@ useHead({
 
       <div class="game-container reverse">
         <div class="game-preview">
-          <img src="/static/AmIBlue.png" alt="Am I Blue game preview" class="game-image" />
+          <img src="/AmIBlue.png" alt="Am I Blue game preview" class="game-image" />
         </div>
         <div class="game-info">
           <h3 class="game-title">{{ $t('am_i_blue') }}</h3>
@@ -132,7 +132,7 @@ useHead({
 
       <div class="game-container">
         <div class="game-preview">
-            <img src="/static/TeaForTwo.png" alt="" class="game-image" />
+            <img src="/TeaForTwo.png" alt="" class="game-image" />
         </div>
         <div class="game-info">
           <h3 class="game-title">{{ $t('tea_for_two') }}</h3>
@@ -150,25 +150,25 @@ useHead({
   <div class="galaxy-slider">
   <div class="galaxy-grid">
     <div class="galaxy-item">
-      <img src="/static/G1.jpg" alt="Cocolor workshop" class="galaxy-image" />
+      <img src="/G1.jpg" alt="Cocolor workshop" class="galaxy-image" />
       <p class="galaxy-title">{{ $t('galaxy_1_title') }}</p>
       <p class="galaxy-description">{{ $t('galaxy_1_description') }}</p>
       <a href="https://www.fondationlouisvuitton.fr/fr/evenements/atelier-cocolor " class="galaxy-link">fondationlouisvuitton.fr</a>
     </div>
     <div class="galaxy-item">
-      <img src="/static/G2.jpg" alt="Kids discovering color vision" class="galaxy-image" />
+      <img src="/G2.jpg" alt="Kids discovering color vision" class="galaxy-image" />
       <p class="galaxy-title">{{ $t('galaxy_2_title') }}</p>
       <p class="galaxy-description">{{ $t('galaxy_2_description') }}</p>
       <a href="https://parismuse.com/tours/explore-modern-art-cocolor-for-families/" class="galaxy-link">parismuse.com</a>
     </div>
     <div class="galaxy-item">
-      <img src="/static/G3.jpg" alt="Cocolor app" class="galaxy-image" />
+      <img src="/G3.jpg" alt="Cocolor app" class="galaxy-image" />
       <p class="galaxy-title">{{ $t('galaxy_3_title') }}</p>
       <p class="galaxy-description">{{ $t('galaxy_3_description') }}</p>
       <a href="mailto:bonjour@heretique.fr" class="galaxy-link">{{ $t('contact_us') }}</a>
     </div>
   <div class="galaxy-item">
-      <img src="/static/G4.jpg" alt="Cocolor app" class="galaxy-image" />
+      <img src="/G4.jpg" alt="Cocolor app" class="galaxy-image" />
       <p class="galaxy-title">{{ $t('galaxy_4_title') }}</p>
       <p class="galaxy-description">{{ $t('galaxy_4_description') }}</p>
       <a href="mailto:bonjour@heretique.fr"  class="galaxy-link">{{ $t('contact_us') }}</a>
@@ -217,7 +217,7 @@ useHead({
     </div>
   </div>
   <div class="footer-logo">
-    <img src="/static/logo.svg" alt="Cocolor logo" class="footer-image" />
+    <img src="/logo.svg" alt="Cocolor logo" class="footer-image" />
     <a class="legal-link" @click="showLegals = true">{{ $t('legal_mentions') }}</a>
   </div>
 </div>
@@ -257,15 +257,9 @@ export default {
   },
   methods: {
     svgImport(filename) {
-    const language = this.$i18n.locale.toUpperCase();
-    try {
-      // Utilise require pour indiquer à Webpack d'inclure les fichiers SVG nécessaires
-      return `/_nuxt/static/${filename}_${language}.svg`;
-    } catch (error) {
-      console.error("Erreur lors de l'import de l'image : ", error);
-      return ''; // Retourne une chaîne vide en cas d'erreur
-    }
-  },
+      const language = this.$i18n.locale.toUpperCase();
+      return `/${filename}_${language}.svg`;
+    } ,
   switchLanguage() {
   // Obtenir la locale actuelle
   const currentLocale = this.$i18n.locale;
