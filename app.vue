@@ -193,6 +193,10 @@ useHead({
     <div class="creator-description">
       <p>{{ $t('heretic_intro') }}</p>
       <a href="https://heretique.fr" class="link-underline">{{ $t('discover_heretic') }}</a>
+      <br><br>
+      <p style="color:grey">{{ $t('credits1') }}
+      <br>{{ $t('credits2') }}</p>
+
     </div>
   </div>
 </section>
