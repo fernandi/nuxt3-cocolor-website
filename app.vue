@@ -195,7 +195,8 @@ useHead({
       <a href="https://heretique.fr" class="link-underline">{{ $t('discover_heretic') }}</a>
       <br><br>
       <p style="color:grey">{{ $t('credits1') }}
-      <br>{{ $t('credits2') }}</p>
+      <br>{{ $t('credits2') }}
+      <br>{{ $t('credits3') }}</p>
 
     </div>
   </div>
